@@ -115,12 +115,22 @@ class Normalise
             }
         }
 
+
+        // Remove index.php from path if preferenced
+        if (
+            boolval($instance->settings->redirect_indexphp) === true &&
+            preg_match('/index\.php/i', $url['path']) === 1
+        ) {
+            $url['path'] = preg_replace('/index\.php/i', '', $url['path']);
+        }
+
         //Remove multiple slashes from path if preferenced
         if (
             boolval($instance->settings->normalise_slashes) === true &&
             preg_match('/\/{2,}/', $url['path']) === 1
         ) {
             $url['path'] = preg_replace('/\/{2,}/', '/', $url['path']);
+
         }
 
         // Add or remove trailing slash if preferenced
