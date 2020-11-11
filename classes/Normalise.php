@@ -115,6 +115,14 @@ class Normalise
             }
         }
 
+        //Remove multiple slashes from path if preferenced
+        if (
+            boolval($instance->settings->normalise_slashes) === true &&
+            preg_match('/\/{2,}/', $url['path']) === 1
+        ) {
+            $url['path'] = preg_replace('/\/{2,}/', '/', $url['path']);
+        }
+
         // Add or remove trailing slash if preferenced
         if ($instance->settings->trailing_slash !== 'none') {
             // Do not apply trailing slash rules if the URL has an extension
