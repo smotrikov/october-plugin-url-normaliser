@@ -14,6 +14,10 @@ return [
         'tabs' => [
             'urlSettings' => 'URL Settings'
         ],
+        'normalise_slashes' => [
+            'label' => 'Normalize multiple slashes?',
+            'comment' => 'If checked, the normalised URLs has no multiple slashes.'
+        ],
         'force_https' => [
             'label' => 'Force HTTPS?',
             'comment' => 'If checked, the normalised URLs will always use a secure address.'

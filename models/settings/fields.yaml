@@ -10,6 +10,13 @@ tabs:
                 www: bennothommo.urlnormaliser::lang.settings.www_prefix.options.www
                 notWww: bennothommo.urlnormaliser::lang.settings.www_prefix.options.notWww
             default: none
+        normalise_slashes:
+            label: bennothommo.urlnormaliser::lang.settings.normalise_slashes.label
+            tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
+            type: checkbox
+            span: left
+            default: false
+            comment: bennothommo.urlnormaliser::lang.settings.normalise_slashes.comment
         redirect_indexphp:
             label: bennothommo.urlnormaliser::lang.settings.redirect_indexphp.label
             tab: bennothommo.urlnormaliser::lang.settings.tabs.urlSettings
