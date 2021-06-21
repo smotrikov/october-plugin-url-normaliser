@@ -224,7 +224,7 @@ class Normalise
      */
     protected function getHostname()
     {
-        return $_SERVER['SERVER_NAME']
+        return config('app.url')
             ?? parse_url(url(), PHP_URL_HOST)
             ?? null;
     }
